@@ -1,0 +1,129 @@
+:root {
+    --primary-color: #4CAF50; /* Власник */
+    --tenant-color: #2196F3;  /* Орендар */
+    --realtor-color: #FF9800; /* Рієлтор */
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.role-selector {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.role-selector select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #333;
+    padding: 0 2rem;
+}
+
+nav button {
+    background-color: inherit;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    display: none;
+}
+
+nav button:hover, nav button.active {
+    background-color: #ddd;
+    color: black;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.tab-content {
+    display: none;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-details {
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.card-actions {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+}
+
+.btn {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-danger { background-color: #f44336; color: white; }
+.btn-success { background-color: var(--primary-color); color: white; }
+.btn-primary { background-color: var(--tenant-color); color: white; }
+.btn-warning { background-color: var(--realtor-color); color: white; }
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;
+}
+
+/* Динамічні кольори шапки */
+.role-owner header { background-color: var(--primary-color); }
+.role-tenant header { background-color: var(--tenant-color); }
+.role-realtor header { background-color: var(--realtor-color); }
